@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>qci_client package &#8212; QCI Client 1.4.4 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="qci-client-package">
+<h1>qci_client package<a class="headerlink" href="#qci-client-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-qci_client.base">
+<span id="qci-client-base-module"></span><h2>qci_client.base module<a class="headerlink" href="#module-qci_client.base" title="Permalink to this heading">¶</a></h2>
+<p>Base class for API clients.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">qci_client.base.</span></span><span class="sig-name descname"><span class="pre">BaseApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_bearer_info:</span> <span class="pre">dict</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_token:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_bearer_token_on_init:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authorize:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_authorize:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'authorize'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_download:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'contents'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_add_headers:</span> <span class="pre">~typing.Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_user_not_authorized:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'user</span> <span class="pre">not</span> <span class="pre">authorized'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">300.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qci_client.base.BaseApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for API clients.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi.api_token">
+<span class="sig-name descname"><span class="pre">api_token</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#qci_client.base.BaseApi.api_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi.auth_url">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">auth_url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#qci_client.base.BaseApi.auth_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the URL used for authorization.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi.authorize">
+<span class="sig-name descname"><span class="pre">authorize</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#qci_client.base.BaseApi.authorize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi.debug">
+<span class="sig-name descname"><span class="pre">debug</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#qci_client.base.BaseApi.debug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi.get_bearer_token">
+<span class="sig-name descname"><span class="pre">get_bearer_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="headerlink" href="#qci_client.base.BaseApi.get_bearer_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Request new bearer token. (Not cached here, see set_bearer_token.)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi.headers">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">headers</span></span><a class="headerlink" href="#qci_client.base.BaseApi.headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Headers with cached bearer token.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi.headers_without_connection_close">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">headers_without_connection_close</span></span><a class="headerlink" href="#qci_client.base.BaseApi.headers_without_connection_close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Headers with cached bearer token, but without connection closing.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi.headers_without_token">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">headers_without_token</span></span><a class="headerlink" href="#qci_client.base.BaseApi.headers_without_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Headers without cached bearer token.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi.is_bearer_token_expired">
+<span class="sig-name descname"><span class="pre">is_bearer_token_expired</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#qci_client.base.BaseApi.is_bearer_token_expired" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is current time &gt; ‘expires’ time.
+TODO: expires_in should be ‘expires_at’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi.refresh_token">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">refresh_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Callable</span></span></span><a class="headerlink" href="#qci_client.base.BaseApi.refresh_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a wrapper function that can check an auth token.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi.set_bearer_token">
+<span class="sig-name descname"><span class="pre">set_bearer_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qci_client.base.BaseApi.set_bearer_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set bearer token from request.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi.set_bearer_token_on_init">
+<span class="sig-name descname"><span class="pre">set_bearer_token_on_init</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#qci_client.base.BaseApi.set_bearer_token_on_init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi.timeout">
+<span class="sig-name descname"><span class="pre">timeout</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">300.0</span></em><a class="headerlink" href="#qci_client.base.BaseApi.timeout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.base.BaseApi.url">
+<span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#qci_client.base.BaseApi.url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-qci_client.data_converter">
+<span id="qci-client-data-converter-module"></span><h2>qci_client.data_converter module<a class="headerlink" href="#module-qci_client.data_converter" title="Permalink to this heading">¶</a></h2>
+<p>Functions for data conversion.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="qci_client.data_converter.build_graph_data_from_get_file">
+<span class="sig-prename descclassname"><span class="pre">qci_client.data_converter.</span></span><span class="sig-name descname"><span class="pre">build_graph_data_from_get_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_parts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Generator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#qci_client.data_converter.build_graph_data_from_get_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return graph data built from a given graph file generator and type.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_parts: File-part generator
+file_type: Type of the file</p>
+</dd>
+<dt>Returns:</dt><dd><p>Dictionary of graph data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="qci_client.data_converter.compute_results_step_len">
+<span class="sig-prename descclassname"><span class="pre">qci_client.data_converter.</span></span><span class="sig-name descname"><span class="pre">compute_results_step_len</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#qci_client.data_converter.compute_results_step_len" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the step length for “chunking” the providd data.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>data: An numpy array or list of data</p>
+</dd>
+<dt>Returns:</dt><dd><p>The step length for “chunking” the data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="qci_client.data_converter.data_to_json">
+<span class="sig-prename descclassname"><span class="pre">qci_client.data_converter.</span></span><span class="sig-name descname"><span class="pre">data_to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">spmatrix</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Graph</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#qci_client.data_converter.data_to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts  data input into JSON string that can be passed to Qatalyst REST API
+:param data: object to be converted to JSON</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>currently constraint_penalties require one value for each constraint</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_type</strong> – one of [“graph”, “qubo”, “objective”, “constraints”, “constraint_penalties”, “rhs”, “hamiltonian”]</p></li>
+<li><p><strong>file_name</strong> – Optional user specified name for file to be uploaded</p></li>
+<li><p><strong>debug</strong> – Optional, if set to True, enables debug output (default = False for no debug output)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>string (JSON format)</p>
+</dd>
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>could add support for matrices stored as lists</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="qci_client.data_converter.get_size">
+<span class="sig-prename descclassname"><span class="pre">qci_client.data_converter.</span></span><span class="sig-name descname"><span class="pre">get_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#qci_client.data_converter.get_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursively finds size of objects</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> – data object to recursively compute size of</p></li>
+<li><p><strong>seen</strong> – takes a set and is used in the recursive step only to record whether an object has been counted yet.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return int<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="qci_client.data_converter.load_json_file">
+<span class="sig-prename descclassname"><span class="pre">qci_client.data_converter.</span></span><span class="sig-name descname"><span class="pre">load_json_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#qci_client.data_converter.load_json_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a utf-8-encoded json file into a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_name</strong> – name of the JSON file to load</p>
+</dd>
+<dt class="field-even">Return dict<span class="colon">:</span></dt>
+<dd class="field-even"><p>loaded json file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="qci_client.data_converter.multipart_file">
+<span class="sig-prename descclassname"><span class="pre">qci_client.data_converter.</span></span><span class="sig-name descname"><span class="pre">multipart_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span></span></span><a class="headerlink" href="#qci_client.data_converter.multipart_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Break file-to-upload’s data dictionary into chunks, formatting correctly with each
+returned chunk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – dict, object from data_to_json() function</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>generator of (chunk, part_num) tuples</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-qci_client.qci_client">
+<span id="qci-client-qci-client-module"></span><h2>qci_client.qci_client module<a class="headerlink" href="#module-qci_client.qci_client" title="Permalink to this heading">¶</a></h2>
+<p>QciClient
+Utility class for user interactions with QCI API</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="qci_client.qci_client.JobStatus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">qci_client.qci_client.</span></span><span class="sig-name descname"><span class="pre">JobStatus</span></span><a class="headerlink" href="#qci_client.qci_client.JobStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Allowed jobs statuses.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.qci_client.JobStatus.CANCELLED">
+<span class="sig-name descname"><span class="pre">CANCELLED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'CANCELLED'</span></em><a class="headerlink" href="#qci_client.qci_client.JobStatus.CANCELLED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.qci_client.JobStatus.COMPLETED">
+<span class="sig-name descname"><span class="pre">COMPLETED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'COMPLETED'</span></em><a class="headerlink" href="#qci_client.qci_client.JobStatus.COMPLETED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.qci_client.JobStatus.ERROR">
+<span class="sig-name descname"><span class="pre">ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ERROR'</span></em><a class="headerlink" href="#qci_client.qci_client.JobStatus.ERROR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.qci_client.JobStatus.QUEUED">
+<span class="sig-name descname"><span class="pre">QUEUED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'QUEUED'</span></em><a class="headerlink" href="#qci_client.qci_client.JobStatus.QUEUED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.qci_client.JobStatus.RUNNING">
+<span class="sig-name descname"><span class="pre">RUNNING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'RUNNING'</span></em><a class="headerlink" href="#qci_client.qci_client.JobStatus.RUNNING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.qci_client.JobStatus.SUBMITTED">
+<span class="sig-name descname"><span class="pre">SUBMITTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'SUBMITTED'</span></em><a class="headerlink" href="#qci_client.qci_client.JobStatus.SUBMITTED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">qci_client.qci_client.</span></span><span class="sig-name descname"><span class="pre">QciClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_bearer_info:</span> <span class="pre">dict</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_token:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_bearer_token_on_init:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authorize:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_authorize:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'authorize'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_download:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'contents'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_add_headers:</span> <span class="pre">~typing.Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_user_not_authorized:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'user</span> <span class="pre">not</span> <span class="pre">authorized'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">300.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'files'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jobs:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'jobs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_supported_job_types:</span> <span class="pre">~typing.List[str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qci_client.qci_client.QciClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#qci_client.base.BaseApi" title="qci_client.base.BaseApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseApi</span></code></a></p>
+<p>Provides requests for QCIs public API as well as utility functions for creating requests and processing entire jobs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>max_workers</strong> – int, number of threads for concurrent file download calls</p></li>
+<li><p><strong>files</strong> – url path fragment to specify files API endpoint</p></li>
+<li><p><strong>jobs</strong> – url path fragment to specify jobs API endpoint</p></li>
+<li><p><strong>_supported_job_types</strong> – list of job_types accepted by jobs endpoint</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.build_job_body">
+<span class="sig-name descname"><span class="pre">build_job_body</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qubo_file_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_file_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hamiltonian_file_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objective_file_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints_file_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rhs_file_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'job_0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.build_job_body" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs body for job submission requests
+:param job_type: one of _supported_job_types
+:param qubo_file_id: file id from files API for uploaded qubo
+:param graph_file_id: file id from files API for uploaded graph
+:param hamiltonian_file_id: file id from files API for uploaded hamiltonian
+:param objective_file_id: file id from files API for uploaded objective
+:param constraints_file_id: file id from files API for uploaded constraints
+:param rhs_file_id: file id from files API for uploaded rhs
+:param job_params: dict of additional params to be passed to job submission in “params” key
+:param job_name: user specified name for job submission
+:param job_tags: user specified labels for classifying and filtering user jobs after submission
+:note: Need to add validation for job parameters</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.delete_file">
+<span class="sig-name descname"><span class="pre">delete_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.delete_file" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_id</strong> – str - file_id of file to be deleted</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict containing information about file deleted (or error)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.files">
+<span class="sig-name descname"><span class="pre">files</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'files'</span></em><a class="headerlink" href="#qci_client.qci_client.QciClient.files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.files_url">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">files_url</span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.files_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get files URL.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.get_file">
+<span class="sig-name descname"><span class="pre">get_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.get_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return file contents as a generator. Each entry will be a dictionary of the form</p>
+<blockquote>
+<div><p>{
+‘file_name’: ‘some_name’, ‘file_type’: ‘qubo’, ‘num_variables’: ‘n’,
+‘part_num’: part number, ‘data’: [{‘i’: i, ‘j’: j, ‘val: val}, …, {…}]
+}</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_id</strong> – str, a file id</p></li>
+<li><p><strong>metadata</strong> – dict, metadata obtained from ‘get_metadata’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>generator</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.get_file_contents_url">
+<span class="sig-name descname"><span class="pre">get_file_contents_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">part_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.get_file_contents_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get file contents URL with file ID and file part number.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.get_file_id_url">
+<span class="sig-name descname"><span class="pre">get_file_id_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.get_file_id_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get file URL with file ID.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.get_file_metadata">
+<span class="sig-name descname"><span class="pre">get_file_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.get_file_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get file info. Use to determine file type and dimensions for matrix construction.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_id: str, from {‘file_id’: file_id} returned by a GET call</p>
+</dd>
+<dt>Returns:</dt><dd><p>Dictionary of metadata</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.get_file_whole">
+<span class="sig-name descname"><span class="pre">get_file_whole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.get_file_whole" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return file content with complete data field. Extends get_file and combines the
+iterator portion into one data list.</p>
+<blockquote>
+<div><p>{
+‘file_name’: ‘some_name’, ‘file_type’: ‘qubo’, ‘num_variables’: ‘n’,
+‘data’: [{‘i’: i, ‘j’: j, ‘val: val}, …, {…}]
+}</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_id</strong> – str, a file id</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict, file content with metadata</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.get_job_id_url">
+<span class="sig-name descname"><span class="pre">get_job_id_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.get_job_id_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get job URL with job ID.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.get_job_metrics_provider_url">
+<span class="sig-name descname"><span class="pre">get_job_metrics_provider_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.get_job_metrics_provider_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getjob metrics for provider using job ID.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.get_job_metrics_url">
+<span class="sig-name descname"><span class="pre">get_job_metrics_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.get_job_metrics_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get job metrics using job ID.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.get_job_response">
+<span class="sig-name descname"><span class="pre">get_job_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.get_job_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a response for a job by id and type, which may/may not be finished.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job_id</strong> – ID of job</p></li>
+<li><p><strong>job_type</strong> – type of job, one of []</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return dict<span class="colon">:</span></dt>
+<dd class="field-even"><p>loaded json file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.get_job_status">
+<span class="sig-name descname"><span class="pre">get_job_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.get_job_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the status of a job by its ID.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>job_id: ID of job</p>
+</dd>
+<dt>Returns:</dt><dd><p>Response from GET call to API</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.get_job_statuses_url">
+<span class="sig-name descname"><span class="pre">get_job_statuses_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.get_job_statuses_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get job status using job ID.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.get_job_type_from_job_id">
+<span class="sig-name descname"><span class="pre">get_job_type_from_job_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.get_job_type_from_job_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get job type from job ID.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>job_id: ID of the job</p>
+</dd>
+<dt>Returns:</dt><dd><p>Type of the job</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.get_job_type_job_id_url">
+<span class="sig-name descname"><span class="pre">get_job_type_job_id_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.get_job_type_job_id_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get job URL with job type and job ID.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.get_job_type_url">
+<span class="sig-name descname"><span class="pre">get_job_type_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.get_job_type_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get job URL with job type.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.jobs">
+<span class="sig-name descname"><span class="pre">jobs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'jobs'</span></em><a class="headerlink" href="#qci_client.qci_client.QciClient.jobs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.jobs_url">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">jobs_url</span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.jobs_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get jobs URL.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.list_files">
+<span class="sig-name descname"><span class="pre">list_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.list_files" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>username</strong> – Optional str - username (to search for files owned by the named user)
+mostly useful when run by users with administrator privileges (such as QCI users) who can see all files.
+When called by an administrator, the username parameter is used to restrict the list files returned
+to be only the files owned by the user specified in the username parameter.
+When run by non-privileged users, this parameter is truly optional because non-privileged users
+will only ever see lists of files that they created.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict containing list of files</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.max_workers">
+<span class="sig-name descname"><span class="pre">max_workers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#qci_client.qci_client.QciClient.max_workers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.merge_two_dicts">
+<span class="sig-name descname"><span class="pre">merge_two_dicts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qci_client.qci_client.QciClient.merge_two_dicts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given two dictionaries, merge them into a new dict as a shallow copy.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.print_job_log">
+<span class="sig-name descname"><span class="pre">print_job_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.print_job_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Formats a messages for updating user with a time stamp appended
+:param message: a string to be passed in print statement</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.process_job">
+<span class="sig-name descname"><span class="pre">process_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.process_job" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job_type</strong> – the type of job being processed must be one of _supported_job_types</p></li>
+<li><p><strong>job_body</strong> – formatted json dict for body of job submission request</p></li>
+<li><p><strong>wait</strong> – bool indicating whether or not user wants to wait for job to complete</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>if wait is True, then dict with job_info response and results file</dt><dd><p>(results is None if ERROR or CANCELLED)</p>
+</dd>
+<dt>if wait is False, then response dict from submitted job, which includes job</dt><dd><p>ID for subsequent retrieval</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>what else do we want to return with the results? response_id, obviously job_id</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.submit_job">
+<span class="sig-name descname"><span class="pre">submit_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.submit_job" title="Permalink to this definition">¶</a></dt>
+<dd><p>Submit a job via a request to QCI public API.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>json_dict: formatted json body that includes all parameters for the job
+job_type: one of the _supported_job_types</p>
+</dd>
+<dt>Returns:</dt><dd><p>Response from POST call to API</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.upload_file">
+<span class="sig-name descname"><span class="pre">upload_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Graph</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">spmatrix</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.upload_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uploads either a formatted dict that can be uploaded directly or if supplied
+with a np.ndarray, nx.Graph, sp.spmatrix attempts to create formatted json. Must
+include file_type paramter must be provided if using any format other than dict
+for your upload.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – either a formatted dict which will compose upload body or a python
+object which will be used to create the data field in the formatted request
+body.</p></li>
+<li><p><strong>file_type</strong> – str used in tandem with non-dict objects to create the request
+body. Optional if uploading a formatted dict which will compose the request
+body. Must be one of [“qubo”, “hamiltonian”, “graph”, “objective”,
+“constraints”, “rhs”].</p></li>
+<li><p><strong>file_name</strong> – Optional str provided by user for identification of the file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict with a single entry {“file_id”: “some_file_id”}.</p>
+</dd>
+</dl>
+<p>Any open requests should be terminated promptly upon exit, say, due to
+an exception.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.validate_job_type">
+<span class="sig-name descname"><span class="pre">validate_job_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.validate_job_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a provided job type is a supported job type.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>job_type: a job type to validate</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+<p>Raises AssertionError if job_type is not one of the _supported_job_types.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qci_client.qci_client.QciClient.zip_payload">
+<span class="sig-name descname"><span class="pre">zip_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#qci_client.qci_client.QciClient.zip_payload" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>payload</strong> – str - json contents of file to be zipped</p>
+</dd>
+</dl>
+<p>“return: zipped request_body</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-qci_client.utils">
+<span id="qci-client-utils-module"></span><h2>qci_client.utils module<a class="headerlink" href="#module-qci_client.utils" title="Permalink to this heading">¶</a></h2>
+<p>Utilities for qci-client.</p>
+</section>
+<section id="module-qci_client">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-qci_client" title="Permalink to this heading">¶</a></h2>
+<p>Automatic imports for qci-client.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">QCI Client</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Quantum Computing Inc..
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/qci_client.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
